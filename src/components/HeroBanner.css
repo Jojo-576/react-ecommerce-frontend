@@ -1,0 +1,83 @@
+.hero-banner {
+  width: 100%;
+  margin: 1px 0 0 0;
+  padding: 20px 0;
+  background: linear-gradient(to right, #ffb300, #ffa000);
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+}
+.hero-title {
+  font-size: 26px;
+  font-weight: 900;
+  margin: 0;
+  color: black;
+}
+.glitch-text {
+  font-size: 20px;
+  font-weight: 800;
+  color: red;
+  margin: 0;
+  animation: glitch 1s infinite;
+}
+.call-now {
+  font-size: 18px;
+  font-weight: 900;
+  margin: 0;
+  color: black;
+}
+@keyframes glitch {
+  0% { opacity: 1; }
+  20% { opacity: 0.2; }
+  40% { opacity: 1; }
+  60% { opacity: 0.1; }
+  80% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+@media (max-width: 768px) {
+  .hero-banner {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.shop-button {
+  background-color: black;
+  color: white;
+  padding: 10px 18px;
+  font-size: 18px;
+  font-weight: 900;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin: 10px auto 0 auto;
+  margin-left: 50px;
+}
+.shop-button:hover {
+  background-color: red;
+  color: yellow;
+  transform: scale(1.05);
+}
+/* 🆕 Sell button styling */
+.sell-button {
+  background-color: white;
+  color: black;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-right:80px;
+}
+
+.sell-button:hover {
+  background-color:yellow;
+  color: red;
+  transform: scale(1.05);
+}
