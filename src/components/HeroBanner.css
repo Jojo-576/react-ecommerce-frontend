@@ -10,13 +10,16 @@
   align-items: center;
   gap: 30px;
   text-align: center;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
 }
+
 .hero-title {
   font-size: 26px;
   font-weight: 900;
   margin: 0;
   color: black;
 }
+
 .glitch-text {
   font-size: 20px;
   font-weight: 800;
@@ -24,26 +27,14 @@
   margin: 0;
   animation: glitch 1s infinite;
 }
+
 .call-now {
   font-size: 18px;
   font-weight: 900;
   margin: 0;
   color: black;
 }
-@keyframes glitch {
-  0% { opacity: 1; }
-  20% { opacity: 0.2; }
-  40% { opacity: 1; }
-  60% { opacity: 0.1; }
-  80% { opacity: 1; }
-  100% { opacity: 0.3; }
-}
-@media (max-width: 768px) {
-  .hero-banner {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
+
 .shop-button {
   background-color: black;
   color: white;
@@ -55,14 +46,15 @@
   cursor: pointer;
   transition: 0.3s ease;
   margin: 10px auto 0 auto;
-  margin-left: 50px;
 }
+
 .shop-button:hover {
   background-color: red;
   color: yellow;
   transform: scale(1.05);
 }
-/* 🆕 Sell button styling */
+
+/* Sell button */
 .sell-button {
   background-color: white;
   color: black;
@@ -73,11 +65,46 @@
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s ease;
-  margin-right:80px;
+  margin-right: 80px;
 }
 
 .sell-button:hover {
-  background-color:yellow;
+  background-color: yellow;
   color: red;
   transform: scale(1.05);
+}
+
+/* Glitch animation */
+@keyframes glitch {
+  0% { opacity: 1; }
+  20% { opacity: 0.2; }
+  40% { opacity: 1; }
+  60% { opacity: 0.1; }
+  80% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+/* Media queries for tablets */
+@media (max-width: 1024px) {
+  .hero-banner {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 0;
+  }
+  .hero-title { font-size: 24px; }
+  .glitch-text { font-size: 18px; }
+  .call-now { font-size: 16px; }
+  .shop-button { font-size: 16px; padding: 8px 16px; margin-left: 0; }
+}
+
+/* Media queries for phones */
+@media (max-width: 768px) {
+  .hero-banner {
+    gap: 10px;
+    padding: 10px 0;
+  }
+  .hero-title { font-size: 22px; }
+  .glitch-text { font-size: 16px; }
+  .call-now { font-size: 14px; }
+  .shop-button { font-size: 14px; padding: 6px 12px; }
 }
