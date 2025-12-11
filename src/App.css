@@ -1,4 +1,4 @@
-/* ------------------ Reset & Global Styles ------------------ */
+/* ------------------ Reset & Global Styles ------------------ */ 
 * {
   margin: 0;
   padding: 0;
@@ -173,11 +173,12 @@ main {
   gap: 20px;
   padding: 10px;
   overflow-x: auto;        /* horizontal scroll if needed on small screens */
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
 }
 
 .product-card {
   flex: 0 0 220px;         /* fixed width, never shrink */
-  max-width: 250px;        /* for desktop spacing */
+  max-width: 250px;        /* spacing for desktop */
   background-color: #fff;
   border-radius: 10px;
   padding: 10px;
@@ -186,5 +187,21 @@ main {
 }
 
 /* ------------------ Mobile (looks identical to desktop) ------------------ */
-/* No media queries needed — everything stays the same */
-/* Horizontal scrolling handles small screens automatically */
+@media (max-width: 768px) {
+  /* HeroBanner scaling */
+  .hero-banner {
+    flex-direction: row; 
+    padding: 15px 10px;
+    gap: 15px;
+  }
+  .hero-title { font-size: 22px; }
+  .glitch-text { font-size: 18px; }
+  .call-now { font-size: 16px; }
+  .shop-button { font-size: 16px; padding: 8px 14px; }
+
+  /* Header scaling */
+  header input { width: 50%; }
+  header button { padding: 8px 12px; font-size: 14px; }
+}
+
+/* Horizontal scrolling handles narrow mobile screens; desktop remains intact */
