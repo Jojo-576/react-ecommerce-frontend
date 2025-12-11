@@ -6,81 +6,32 @@ function Header({ searchTerm, setSearchTerm }) {
   const navigate = useNavigate();
 
   return (
-    <header
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        padding: "15px 40px",
-        backgroundColor: "#1a1a1a",
-        color: "white",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        zIndex: 1000,
-      }}
-    >
-      <h1 style={{ color: "#FFD700", fontStyle: "italic", fontSize: "30px", margin: 0, fontWeight: "bold" }}>
-        KILIKUU
-      </h1>
+    <header className="header">
+      <h1 className="header-title">KILIKUU</h1>
 
-      {/* SEARCH BAR */}
-      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "50%" }}>
+      <div className="header-middle">
         <input
           type="text"
           placeholder="Search for products..."
           value={searchTerm}
           onChange={(e) => {
-            setSearchTerm(e.target.value); // live update
-            navigate("/"); // always go to homepage
+            setSearchTerm(e.target.value);
+            navigate("/");
           }}
-          style={{
-            width: "100%",
-            padding: "10px",
-            fontSize: "15px",
-            borderRadius: "8px 0 0 8px",
-            border: "none",
-            outline: "none",
-          }}
+          className="header-search"
         />
       </div>
 
-      <div style={{ display: "flex", alignItems: "center", gap: "15px", marginRight: "50px" }}>
-        <button
-          onClick={() => navigate("/sell")}
-          style={{
-            padding: "10px 20px",
-            backgroundColor: "#FFD700",
-            color: "#1a1a1a",
-            border: "none",
-            borderRadius: "8px",
-            fontWeight: "bold",
-            cursor: "pointer",
-          }}
-        >
+      <div className="header-buttons">
+        <button onClick={() => navigate("/sell")} className="header-btn">
           Sell on Kilikuu
         </button>
 
-        <button
-          onClick={() => navigate("/create-account")}
-          style={{
-            padding: "10px 20px",
-            backgroundColor: "#FFD700",
-            color: "#1a1a1a",
-            border: "none",
-            borderRadius: "8px",
-            fontWeight: "bold",
-            cursor: "pointer",
-          }}
-        >
+        <button onClick={() => navigate("/create-account")} className="header-btn">
           Create Account
         </button>
 
-        <button
-          onClick={() => navigate("/cart")}
-          style={{ backgroundColor: "transparent", border: "none", cursor: "pointer", fontSize: "22px", color: "white" }}
-        >
+        <button onClick={() => navigate("/cart")} className="cart-btn">
           <FaShoppingCart />
         </button>
       </div>
