@@ -35,16 +35,9 @@ function App() {
                     <p style={{ fontSize: "18px", marginTop: "10px", color: "#333" }}>
                       Discover amazing products at unbeatable prices.
                     </p>
-                    <div
-                      style={{
-                        width: "90%",
-                        margin: "40px auto",
-                        padding: "20px",
-                        backgroundColor: "#fff",
-                        borderRadius: "10px",
-                        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
-                      }}
-                    >
+
+                    {/* Updated product container */}
+                    <div className="product-list" style={{ width: "90%", margin: "40px auto", padding: "20px", backgroundColor: "#fff", borderRadius: "10px", boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)" }}>
                       <ProductList searchTerm={searchTerm} />
                     </div>
                   </main>
