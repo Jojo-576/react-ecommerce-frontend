@@ -10,7 +10,12 @@ const ProductList = ({ searchTerm }) => {
 
   const handleAdd = (product) => {
     addToCart(product);
-    toast.success("✅ Added to cart!", { position: "top-right", autoClose: 1500, hideProgressBar: true, theme: "dark" });
+    toast.success("✅ Added to cart!", {
+      position: "top-right",
+      autoClose: 1500,
+      hideProgressBar: true,
+      theme: "dark",
+    });
   };
 
   const filteredProducts = products.filter((p) =>
@@ -20,16 +25,21 @@ const ProductList = ({ searchTerm }) => {
   return (
     <>
       <ToastContainer />
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: "15px", width: "100%" }}>
+
+      {/* Horizontal scroll container */}
+      <div className="product-list">
         {filteredProducts.map((product) => (
-          <div
-            key={product.id}
-            style={{ backgroundColor: "#fff", borderRadius: "10px", padding: "10px", textAlign: "center", boxShadow: "0 4px 8px rgba(0,0,0,0.1)" }}
-          >
+          <div className="product-card" key={product.id}>
             <img
               src={product.image}
               alt={product.name}
-              style={{ width: "100%", height: "120px", objectFit: "contain", borderRadius: "8px", marginBottom: "8px" }}
+              style={{
+                width: "100%",
+                height: "120px",
+                objectFit: "contain",
+                borderRadius: "8px",
+                marginBottom: "8px",
+              }}
             />
             <h3 style={{ fontSize: "14px", margin: "5px 0", fontWeight: "bold" }}>{product.name}</h3>
             <p style={{ color: "#FF8C00", fontWeight: "bold" }}>GH₵ {product.price}</p>
