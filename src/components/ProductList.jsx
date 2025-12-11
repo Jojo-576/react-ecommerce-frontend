@@ -26,7 +26,6 @@ const ProductList = ({ searchTerm }) => {
     <>
       <ToastContainer />
 
-      {/* Horizontal scroll container */}
       <div className="product-list">
         {filteredProducts.map((product) => (
           <div className="product-card" key={product.id}>
@@ -41,9 +40,18 @@ const ProductList = ({ searchTerm }) => {
                 marginBottom: "8px",
               }}
             />
-            <h3 style={{ fontSize: "14px", margin: "5px 0", fontWeight: "bold" }}>{product.name}</h3>
-            <p style={{ color: "#FF8C00", fontWeight: "bold" }}>GH₵ {product.price}</p>
-
+            <h3
+              style={{
+                fontSize: "14px",
+                margin: "5px 0",
+                fontWeight: "bold",
+              }}
+            >
+              {product.name}
+            </h3>
+            <p style={{ color: "#FF8C00", fontWeight: "bold" }}>
+              GH₵ {product.price}
+            </p>
             <button
               onClick={() => handleAdd(product)}
               style={{
